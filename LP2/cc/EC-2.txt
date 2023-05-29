@@ -1,0 +1,19 @@
+Practical 1 : (EC2)
+
+(Steps)
+
+Log in into AWS -> Open console -> Go to Services -> click 'EC2' under compute -> launch instance -> Give some web-server name -> select 'Amazon Linux 2023 AMI' in Application and OS Images -> create key -> and launch instance -> go to instances -> select ur instance -> click connect -> copy those commands -> open terminal in ubuntu -> paste the commands
+
+---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---
+
+(Theory)
+
+AWS : 
+-Amazon Web Services (AWS) is the world’s most comprehensive and broadly adopted cloud, offering over 200 fully featured services from data centers globally
+
+EC2 : 
+-Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides secure, resizable compute capacity in the cloud
+-Provide secure compute for your applications. Security is built into the foundation of Amazon EC2
+
+AMI : 
+-Amazon Machine Image (AMI) is a supported and maintained image provided by AWS that provides the information required to launch an instance.

@@ -1,0 +1,12 @@
+~Salesforce :
+Salesforce is the customer company. which make cloud-based software designed to help businesses connect to their customers in a whole new way, so they can find more prospects, close more deals, and wow customers with amazing service.
+
+~uses of Salesforce :
+-Salesforce helps businesses keep track of customer interactions and sales data. It can manage leads, contacts, opportunities, and cases.
+-it also offers several features to help businesses automate their sales and marketing processes, such as email marketing, lead capture, and lead scoring
+
+~Apex class :
+An Apex class is a template or blueprint from which Apex objects are created. Classes consist of other classes, user-defined methods, variables, exception types, and static initialization code.
+
+~Visualforce :
+Visualforce pages are the top level container for custom apps built with Visualforce. Create Visualforce pages by adding Visualforce components (standard or custom), static HTML markup, and CSS styles and JavaScript to the page.

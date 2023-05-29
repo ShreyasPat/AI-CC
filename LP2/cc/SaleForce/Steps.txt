@@ -1,0 +1,60 @@
+Create :
+-> Demo 1:
+public class Demo1 {
+    public void CreateAccount(String Name, String Phone){
+        account acc= new account();
+        acc.Name=Name;
+        acc.Phone=Phone;
+        insert acc;
+        System.debug('Account has been inserted : '+acc.name);
+    }
+}
+------------------------------------------------------------------------------------------------
+
+-> Demo 2:
+public class Demo2 {
+    public void UpdateOlderAccount(String Name){
+        List<Account> oldAccount = new List<Account>();
+        for(Account acc: [SELECT Name from Account WHERE phone='123456']){
+            acc.Name = Name;
+            oldAccount.add(acc);
+            System.debug('Account has been updated'+ acc.name);
+        }
+        update oldAccount;
+    }
+}
+------------------------------------------------------------------------------------------------
+
+-> Demo 3:
+public class Demo3 {
+    public void DeleteAccount(){
+        List<Account> oldAccount = new List<Account>();
+        for(Account acc:[select Name,Phone from Account where Name='Pratik']){
+            delete acc;
+            System.debug('Account deleted: '+acc.name);   
+        }
+        update oldAccount;
+    }
+}
+-----------------------------------------------------------------------------------------------------
+
+To Insert:
+-> Open file 'Demo1' -> click 'Debug' -> click 'Open Execute Anonymous window' ->enter below code
+Demo1 acc=new Demo1();
+acc.CreateAccount('Pratik','132456');
+
+To Update:
+-> Open file 'Demo2' -> click 'Debug' -> click 'Open Execute Anonymous window' ->enter below code
+Demo2 acc=new Demo2();
+acc.UpdateOlderAccount('Alpha');
+
+To Delete:
+->Open file 'Demo3' -> click 'Debug' -> click 'Open Execute Anonymous window' ->enter below code
+Demo2 acc=new Demo2();
+acc.DeleteAccount();
+-----------------------------------------------------------------------------------------------------
+
+to check every step
+-> click on 'Query Selector' at bottom -> Enter query below 
+-> select name,phone from Account
+keep clicking on 'Refresh Grid'

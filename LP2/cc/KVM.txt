@@ -1,0 +1,74 @@
+Practical 2 : (KVM)
+
+(Steps)
+
+~Step 1 : Check Virtualization Support 
+
+-> egrep -c '(vmx|svm)' /proc/cpuinfo
+If the command returns a value of 0, your processor is not capable of running KVM.
+
+-> sudo kvm-ok
+If kvm-ok returns an error stating KVM acceleration cannot be used, try solving the problem by installing cpu-checker.
+
+To install cpu-checker, run the following command
+-> sudo apt install cpu-checker
+-------------------------------------------------------------------------------------------------------
+
+~Step 2 : Install KVM on Ubuntu 
+First, update the repositories:
+-> sudo apt update
+
+Then, install essential KVM packages with the following command:
+-> sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+
+When prompted, type Y, press ENTER, and wait for the installation to finish.
+
+-------------------------------------------------------------------------------------------------------
+
+~Step 3 : Authorize Users
+Only members of the libvirt and kvm user groups can run virtual machines. Add a user to the libvirt group by typing:
+-> sudo adduser 'username' libvirt
+Replace username with the actual username.
+
+Now do the same for the kvm group:
+-> sudo adduser 'username' kvm
+
+-------------------------------------------------------------------------------------------------------
+
+~Step 4 : Verify the Installation
+Confirm the installation was successful by using the virsh command:
+-> virsh list --all
+
+Or use the systemctl command to check the status of libvirtd:
+-> sudo systemctl status libvirtd
+If everything is functioning properly, the output returns an active (running) status.
+Press Q to quit the status screen.
+
+If the virtualization daemon is not active, activate it with the following command:
+-> sudo systemctl enable --now libvirtd
+
+-------------------------------------------------------------------------------------------------------
+
+~Step 5 :
+Start virt-manager with:
+-> sudo virt-manager
+
+---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---x---
+
+(Theory)
+
+KVM :
+Kernel-based Virtual Machine (KVM) is an open source virtualization technology built into Linux®. Specifically, KVM lets you turn Linux into a hypervisor that allows a host machine to run multiple, isolated virtual environments called guests or virtual machines (VMs).
+
+Hypervisor :
+A hypervisor is software that creates and runs virtual machines (VMs). A hypervisor, sometimes called a virtual machine monitor (VMM)
+
+virtual environment :
+A virtual environment is a networked application that allows a user to interact with both the computing environment and the work of other users
+
+SSH :
+SSH stands for Secure Shell. It is a network protocol that provides a secure and encrypted method for accessing and managing remote computers. SSH allows users to log in to a remote system over an unsecured network (such as the internet) and perform various tasks securely.
+
+Chmod :
+-chmod is a command-line utility in Unix-like operating systems that is used to change the permissions of files and directories. It stands for "change mode," indicating its purpose of modifying the access mode or permissions of a file or directory.
+-The chmod command allows users to specify who can read, write, and execute a file or directory. It is often used to control access to files and determine the level of permissions for different users or groups.
